@@ -24,7 +24,7 @@ class App extends Component {
         <div className="App-header">
             <div className="enter_button "></div>
             <div className="vid">
-            <video autoPlay  loop="loop" className="video"  >
+            <video autoPlay  loop="loop" className="video"   width="100%">
                     <source src={video} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
             </video>
             </div>

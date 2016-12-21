@@ -28,15 +28,15 @@ max-height: 100px;
     width: 100%;
     overflow:hidden;
     display:block;
-    height: 320px;
+    height: 50vh;
 
 
 
 }
 .video {
-    top: -100px;
+
     height: 300%;
-    margin-top: -400px;
+    margin-top: -55vh;
 
 }
 
