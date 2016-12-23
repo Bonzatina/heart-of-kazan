@@ -5,8 +5,8 @@ import { Link } from 'react-router'
 
 import * as AppActions from './actions/AppActions'
 
-import logo from './LOGO.jpg';
-import video from './kazan_video_glav.mp4';
+import logo from './img/LOGO.jpg';
+import video from './img/kazan_video_glav.mp4';
 import './App.css';
 
 class App extends Component {

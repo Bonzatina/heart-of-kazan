@@ -1,9 +1,10 @@
 import React from 'react'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
+import { Route, IndexRoute } from 'react-router'
 
 import App from './App'
 import NotFound from './NotFound'
 import HelloInput from './containers/HelloInput'
+import Map from './containers/Map'
 import About from './components/About'
 
 export const routes = (
@@ -11,6 +12,7 @@ export const routes = (
         <Route path='/' component={App}>
              <IndexRoute component={HelloInput} />
             <Route path='/about' component={About} />
+            <Route path='/map' component={Map} />
 
         </Route>
         <Route path='*' component={NotFound} />

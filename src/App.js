@@ -5,10 +5,13 @@ import { Link } from 'react-router'
 
 import * as AppActions from './actions/AppActions'
 
-import logo from './LOGO.jpg';
-import  first_img from './screen.png';
-import second_img from './bugulma.jpg';
-import video from './kazan_video_glav.mp4';
+import logo from './img/LOGO.jpg';
+import  first_img from './img/screen.png';
+import second_img from './img/bugulma.jpg';
+import video from './img/kazan_video_glav.mp4';
+import vk_img from './img/vk.png'
+import fb_img from './img/fb.png'
+
 import './App.css';
 
 class App extends Component {
@@ -17,18 +20,28 @@ class App extends Component {
         this.state = { placeholder: this.props.AppState.test};
     }
 
+    handleScrollTop() {
+        scroll(0,0);
+    }
+
   render() {
     return (<div>
       <div className="App">
 
         <div className="App-header">
-            <div className="enter_button "></div>
+            <div className="top_line ">
+                <div className="media_icons">
+                    <a href="https://vk.com/samizdat_kazan" target="balnk"><img className="media_icon" alt="vk"  src={vk_img}/></a>
+                    <a href="https://www.facebook.com/heartofkazan/?fref=ts" target="blank"> <img className="media_icon" alt="fb" src={fb_img}/> </a>
+                    <div className="enter_button"> Войти</div>
+                </div>
+            </div>
             <div className="vid">
-            <video autoPlay  loop="loop" className="video"   width="100%">
+            <video autoPlay  loop="loop" className="video"   width={window.innerWidth > 767 ? '100%' : '150%'}>
                     <source src={video} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
             </video>
             </div>
-            <Link to="/" onClick={scroll(0,0)}><img src={logo} className="col-sm-2 col-md-1 App-logo" alt="logo" /></Link>
+            <Link to={window.location.pathname !== '/' ? '/' : null} onClick={this.handleScrollTop}><img src={logo} className="col-sm-2 col-md-1 App-logo" alt="logo" /></Link>
         </div>
 
           <div className="container-fluid">
@@ -36,8 +49,8 @@ class App extends Component {
 
               <div className=" col-sm-offset-2 col-md-offset-1 col-sm-3 col-md-3">
                   <div className="menu">
-                      / РАХИМ ИТЕГЕЗ / <Link to="/about" >МИН КАЯ? /</Link> <br/>
-                      <a>/МАРШРУТ ПОСТРОЕН/</a>  <a >БУГУЛЬМА/</a><br/>
+                      <Link to="/"> / РАХИМ ИТЕГЕЗ /</Link> <Link to="/about" >МИН КАЯ? /</Link> <br/>
+                      <Link to="/map">/МАРШРУТ ПОСТРОЕН/</Link>  <Link href="http://inde.io/article/304-balzam-na-dushu" target="blank" >БУГУЛЬМА/</Link><br/>
                        КВАРТАЛА / ЭЧПЕЧМАК / <br/>
                        / РЕЧНОЙ ПОРТ /<br/>
                       / ФОТОГРАФ / ПРАВИЛА / <br/>
@@ -47,10 +60,10 @@ class App extends Component {
                       / ДОЯРКА / ЛОШАДКА /
                   </div>
                   <div className="pics">
-                      <img className="first_img" src={first_img}>
+                      <img className="first_img" alt="img1" src={first_img}>
                       </img>
 
-                      <img className="second_img" src={second_img}>
+                      <img className="second_img" alt="img2" src={second_img}>
                       </img>
                   </div>
               </div>

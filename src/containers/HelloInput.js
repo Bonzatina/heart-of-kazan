@@ -4,11 +4,14 @@ export default class HelloInput extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {text_area_edit: false};
+        this.state = {
+            text_area_edit: false,
+            placeholder: 'Привет!',
+        };
     }
-    componentDidUpdate() {
-        this.setState({placeholder: 'aa'})
-    }
+    // componentDidUpdate() {
+    //     this.setState({placeholder: 'Привет'})
+    // }
     handleChange(event) {
         this.setState({value: event.target.value});
     }
@@ -17,14 +20,19 @@ export default class HelloInput extends Component {
     }
 
     render() {
-        return <div>
+        return <div
+            onMouseEnter={this.handleChange_text_area_edit.bind(this)}
+            onMouseLeave={this.handleChange_text_area_edit.bind(this)}>
             { this.state.text_area_edit ?
-                <textarea className="hello_input"
+                <textarea autoFocus={this.state.text_area_edit} className="hello_input"
                           placeholder={this.state.placeholder}
-                          onChange={this.handleChange}/> :
+                          value={this.state.value || ""}
+                          onChange={this.handleChange.bind(this)}/> :
                 <div
                     className="hello_input__link"
-                    onClick={this.handleChange_text_area_edit.bind(this)}>
+
+
+                >
                     +
                 </div>}
         </div>
