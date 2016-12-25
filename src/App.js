@@ -31,9 +31,13 @@ class App extends Component {
         <div className="App-header">
             <div className="top_line ">
                 <div className="media_icons">
+                    <div className="buttons">
+                        <a className="enter_button"> Войти</a>
+                        <a className="enter_button"> Добавить место</a>
+                    </div>
                     <a href="https://vk.com/samizdat_kazan" target="balnk"><img className="media_icon" alt="vk"  src={vk_img}/></a>
                     <a href="https://www.facebook.com/heartofkazan/?fref=ts" target="blank"> <img className="media_icon" alt="fb" src={fb_img}/> </a>
-                    <div className="enter_button"> Войти</div>
+                    <div className="lang_button">EN</div>
                 </div>
             </div>
             <div className="vid">
@@ -59,13 +63,14 @@ class App extends Component {
                       <br/>
                       / ДОЯРКА / ЛОШАДКА /
                   </div>
-                  <div className="pics">
+                  {window.location.pathname == '/' ? null : <div className="pics">
                       <img className="first_img" alt="img1" src={first_img}>
                       </img>
 
                       <img className="second_img" alt="img2" src={second_img}>
                       </img>
-                  </div>
+                  </div>}
+
               </div>
               <div className="col-sm-6 col-md-5">
               <div className="text_area">
