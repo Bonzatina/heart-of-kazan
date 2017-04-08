@@ -8,7 +8,7 @@ import * as AppActions from './actions/AppActions'
 import logo from './img/LOGO.jpg';
 import  first_img from './img/screen.png';
 import second_img from './img/bugulma.jpg';
-import video from './img/kazan_video_glav.mp4';
+
 import vk_img from './img/vk.png'
 import fb_img from './img/fb.png'
 
@@ -36,11 +36,7 @@ class App extends Component {
                     <div className="enter_button"> Войти</div>
                 </div>
             </div>
-            <div className="vid">
-            <video autoPlay  loop="loop" className="video"   width={window.innerWidth > 767 ? '100%' : '150%'}>
-                    <source src={video} type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/>
-            </video>
-            </div>
+
             <Link to={window.location.pathname !== '/' ? '/' : null} onClick={this.handleScrollTop}><img src={logo} className="col-sm-2 col-md-1 App-logo" alt="logo" /></Link>
         </div>
 
