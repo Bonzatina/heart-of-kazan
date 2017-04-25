@@ -9,8 +9,6 @@ import logo from './img/LOGO.jpg';
 import  first_img from './img/screen.png';
 import second_img from './img/bugulma.jpg';
 
-import vk_img from './img/vk.png'
-import fb_img from './img/fb.png'
 
 import './App.css';
 
@@ -25,60 +23,52 @@ class App extends Component {
     }
 
   render() {
-    return (<div>
-      <div className="App">
+    return (
+      <div>
+        <div className="App">
 
-        <div className="App-header">
+          <div className="App-header">
+
             <div className="top_line ">
-                <div className="media_icons">
-                    <a href="https://vk.com/samizdat_kazan" target="balnk"><img className="media_icon" alt="vk"  src={vk_img}/></a>
-                    <a href="https://www.facebook.com/heartofkazan/?fref=ts" target="blank"> <img className="media_icon" alt="fb" src={fb_img}/> </a>
-                    <div className="enter_button"> Войти</div>
-                </div>
             </div>
 
-            <Link to={window.location.pathname !== '/' ? '/' : null} onClick={this.handleScrollTop}><img src={logo} className="col-sm-2 col-md-1 App-logo" alt="logo" /></Link>
-        </div>
+            <div className="main_menu">
+              <div></div>
+              <a className="main_menu__link">О ПРОЕТКЕ</a>
+              <a className="main_menu__link">КАРТА</a>
+              <a className="main_menu__link">ДОБАВИТЬ СВОЕ МЕСТО</a>
+              <a className="main_menu__link">ГИД</a>
+              <div></div>
+            </div>
 
-          <div className="container-fluid">
-          <div className="app_body row">
-
-              <div className=" col-sm-offset-2 col-md-offset-1 col-sm-3 col-md-3">
-                  <div className="menu">
-                      <Link to="/"> / РАХИМ ИТЕГЕЗ /</Link> <Link to="/about" >МИН КАЯ? /</Link> <br/>
-                      <Link to="/map">/МАРШРУТ ПОСТРОЕН/</Link>  <Link href="http://inde.io/article/304-balzam-na-dushu" target="blank" >БУГУЛЬМА/</Link><br/>
-                       КВАРТАЛА / ЭЧПЕЧМАК / <br/>
-                       / РЕЧНОЙ ПОРТ /<br/>
-                      / ФОТОГРАФ / ПРАВИЛА / <br/>
-                      / ГАСТРОНОМ / МАНДАРИНКА / <br/>
-                      / ПИРАЖОК / <a > ДУСЛАР</a>/<br/>
-                      <br/>
-                      / ДОЯРКА / ЛОШАДКА /
-                  </div>
-                  <div className="pics">
-                      <img className="first_img" alt="img1" src={first_img}>
-                      </img>
-
-                      <img className="second_img" alt="img2" src={second_img}>
-                      </img>
-                  </div>
-              </div>
-              <div className="col-sm-6 col-md-5">
-              <div className="text_area">
-                  {this.props.children}
-              </div>
-
-              </div>
-        </div>
-
-        <div className="footer row">
-            <div className=" col-sm-4 col-md-4 "><div className="footer_col_first">Ключи: отъезжают</div></div>
-            <div className=" col-sm-2 col-md-2"><div className="footer_col">Водка. Медь. Бронирование.</div></div>
-            <div className=" col-sm-6 col-md-6"><div className="footer_col">Все реально поцекано, перецекано и уцекано(с)</div></div>
-        </div>
           </div>
-      </div>
-  </div>
+
+
+            <div className="app_body ">
+
+              <div className="background_line">
+                <div className="diagonal"></div>
+                <div className="diagonal2"></div>
+              </div>
+
+              <div className="slogan">
+                THE OF KAZAN IS NOT THE KREMLIN!
+              </div>
+            </div>
+
+            <div className="footer">
+              <div className="">
+
+              </div>
+
+              <div className="">
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
     );
   }
 }
