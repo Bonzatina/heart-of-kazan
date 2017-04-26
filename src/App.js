@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import {GoogleMapLoader, GoogleMap, Marker, InfoWindow} from "react-google-maps";
 
 import * as AppActions from './actions/AppActions'
 
@@ -76,7 +77,40 @@ class App extends Component {
                 </div>
               </div>
               <img className="first_img" src={first_img}/>
+              <div className="map">
+                <GoogleMapLoader
+                  containerElement={
+                    <div
+
+                      style={{
+                        height: "100%",
+                      }}
+                    />
+                  }
+                  googleMapElement={
+                    <GoogleMap
+                      ref={(map) => console.log(map)}
+                      defaultZoom={14}
+                      defaultCenter={{ lat: 55.797774, lng: 49.121631}}
+
+                    >
+                      <Marker position={{ lat: 55.797774, lng: 49.121631}}
+                      />
+                      <Marker position={{ lat: 55.7917, lng: 49.125411}}
+                      />
+                      <InfoWindow
+                        position={{ lat: 55.797774, lng: 49.121631}}
+
+                      >
+                        Хорошее место
+                      </InfoWindow>
+
+                    </GoogleMap>
+                  }
+                />
+              </div>
             </div>
+
 
             <div className="footer">
               <div className="">
