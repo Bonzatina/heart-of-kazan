@@ -18,45 +18,42 @@ class App extends Component {
         this.state = { placeholder: this.props.AppState.test};
     }
 
-    handleScrollTop() {
-        scroll(0,0);
-    }
 
   render() {
     return (
-      <div>
-        <div className="App">
+      <div className="container-fluid">
 
-          <div className="App-header">
+
+          <div className="App-header row">
 
             <div className="top_line ">
             </div>
 
-            <div className="main_menu">
-              <div></div>
-              <a className="main_menu__link">О ПРОЕТКЕ</a>
-              <a className="main_menu__link">КАРТА</a>
-              <a className="main_menu__link">ДОБАВИТЬ СВОЕ МЕСТО</a>
-              <a className="main_menu__link">ГИД</a>
-              <div></div>
+            <div className="main_menu ">
+              <a className="main_menu__link col-sm-3">О ПРОЕТКЕ</a>
+              <a className="main_menu__link col-sm-2">КАРТА</a>
+              <a className="main_menu__link col-sm-5">ДОБАВИТЬ СВОЕ МЕСТО</a>
+              <a className="main_menu__link col-sm-2">ГИД</a>
             </div>
 
           </div>
 
 
-            <div className="app_body ">
+            <div className="app_body row">
 
               <div className="background_line">
                 <div className="diagonal"></div>
                 <div className="diagonal2"></div>
               </div>
 
-              <div className="slogan">
-                THE OF KAZAN IS NOT THE KREMLIN!
+              <div className="col-sm-offset-5">
+              <div className="slogan ">
+                THE HEART OF KAZAN IS NOT THE KREMLIN!
+              </div>
               </div>
             </div>
 
-            <div className="footer">
+            <div className="footer row">
               <div className="">
 
               </div>
@@ -67,7 +64,7 @@ class App extends Component {
 
             </div>
           </div>
-        </div>
+
 
     );
   }
