@@ -6,8 +6,8 @@ import { Link } from 'react-router'
 import * as AppActions from './actions/AppActions'
 
 import logo from './img/LOGO.jpg';
-import  first_img from './img/screen.png';
-import second_img from './img/bugulma.jpg';
+// import  first_img from './img/screen.png';
+import first_img from './img/bugulma.jpg';
 
 
 import './App.css';
@@ -15,12 +15,21 @@ import './App.css';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = { placeholder: this.props.AppState.test};
+        this.state = {
+          placeholder: this.props.AppState.test,
+
+        };
     }
 
-    handleScrollTop() {
-        scroll(0,0);
-    }
+  componentDidMount () {
+
+      const menuItemLeft = this.refs.menuItem.getBoundingClientRect().left;
+
+     // console.log( this.refs.menuItem.getBoundingClientRect());
+    this.setState({
+      sloganLeft: menuItemLeft
+    })
+  }
 
   render() {
     return (
@@ -33,12 +42,12 @@ class App extends Component {
             </div>
 
             <div className="main_menu">
-              <div></div>
+
               <a className="main_menu__link">О ПРОЕТКЕ</a>
               <a className="main_menu__link">КАРТА</a>
-              <a className="main_menu__link">ДОБАВИТЬ СВОЕ МЕСТО</a>
+              <a className="main_menu__link" ref="menuItem">ДОБАВИТЬ СВОЕ МЕСТО</a>
               <a className="main_menu__link">ГИД</a>
-              <div></div>
+
             </div>
 
           </div>
@@ -51,9 +60,22 @@ class App extends Component {
                 <div className="diagonal2"></div>
               </div>
 
-              <div className="slogan">
-                THE OF KAZAN IS NOT THE KREMLIN!
+              <div className="slogan" ref='slogan' style={{left: this.state.sloganLeft}}>
+                THE HEART OF KAZAN <br /> IS NOT THE KREMLIN!
               </div>
+
+              <div className="info_block">
+                <div className="info_block__top_text">
+                  Арт-зин как гид по городу, главное отличие которого в том, что в нем нет классических экскурсионных маршрутов,
+                  общеизвестных достопримечательностей и нагромождения исторических фактов.
+                  <br /> <br />
+                  Большей частью содержит в себе увлекательные исследования города в форме художественного очерка, а также красивейшие фото-истории
+                </div>
+                <div className="info_block__bottom_text">
+                  Выбор мест продиктован не коммерческой успешностью, а личными предпочтениями жителей города и авторским видением.
+                </div>
+              </div>
+              <img className="first_img" src={first_img}/>
             </div>
 
             <div className="footer">
